@@ -1,0 +1,32 @@
+#!/usr/bin/env node
+
+var wpxml2json = require("../lib/wpxml2json");
+var program = require("commander");
+// var fs = require("fs");
+var fs = require("../lib/fs");
+var pkg = require("../package.json");
+var path = require("path");
+
+program
+  .version(pkg.version)
+  .usage('[xml file path] [options]')
+  .option('-o --output [filename]', 'directory to save the json output. Defaults to ./wp.json')
+  .parse(process.argv);
+
+if (program.args.length > 0) {
+  var xmlFile = program.rawArgs[2];
+  var output = program.rawArgs[4]?path.normalize(program.rawArgs[4]):"wp.json";
+
+  wpxml2json(xmlFile, function (err, test) {
+    fs.mkdir(path.dirname(output), 0777, true, function (err) {
+      if (err) throw err;
+      fs.writeFile(output, JSON.stringify(test, null, 2), function (err) {
+        if (err) throw err;
+        console.log("File saved to " + output);
+      });
+    });
+  });
+  
+} else {
+  program.help();
+}

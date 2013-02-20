@@ -1,0 +1,34 @@
+{
+  "name": "wpxml2json",
+  "description": "A NodeJS library and CLI tool to parse WordPress XML files into a beautiful and understandable JSON file",
+  "version": "0.0.1",
+  "homepage": "https://github.com/jorgepedret/wpxml2json",
+  "keywords": [
+    "xml",
+    "json",
+    "wordpress",
+    "wp",
+    "cli",
+    "export"
+  ],
+  "author": {
+    "name": "Jorge Pedret",
+    "email": "jorgepedret@gmail.com",
+    "url": "http://jorgepedret.com"
+  },
+  "contributors": [
+    {
+      "name": "Robert W. Hurst",
+      "url": "https://github.com/robertwhurst"
+    },
+    {
+      "name": "Rob Ellis",
+      "url": "http://silentrob.me"
+    }
+  ],
+  "dependencies": {
+    "request": "2.12.0",
+    "xml2js": "0.2.4",
+    "commander": "1.1.1"
+  }
+}
