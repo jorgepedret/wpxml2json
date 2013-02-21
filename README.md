@@ -38,7 +38,7 @@ wpxml2json("assets/sample.xml", function (err, blog) {
 ```
 
 # Use at your own risk!
-I haven't tested the code throughly. I don't recommend using it yet.
+I've only tested this library agains 3 different xml files. If you find any errors or unexpected behaviour, please create an issue and I'll look into it.
 
 ## License
 
